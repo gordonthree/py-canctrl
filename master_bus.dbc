@@ -159,13 +159,13 @@ BO_ 515 SET_DISPLAY_FLASH: 6 Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 516 SET_DISPLAY_BACKLIGHT_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 516 SET_DISPLAY_BACKLIGHT_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 517 SET_DISPLAY_BACKLIGHT_BRIGHTNESS: 7 Vector__XXX
- SG_ brightness : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 517 SET_DISPLAY_BACKLIGHT_BRIGHTNESS: 6 Vector__XXX
+ SG_ brightness : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -179,8 +179,8 @@ BO_ 519 REQ_DISPLAY_DATA: 7 Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 520 SET_OLED_FIELD_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 520 SET_OLED_FIELD_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -209,28 +209,30 @@ BO_ 526 DISPLAY_DATA_ACK: 8 Vector__XXX
 BO_ 527 SET_DISPLAY_RESERVED_20F: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 528 SET_ARGB_STRIP_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 528 SET_ARGB_STRIP_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 529 SET_ARGBW_STRIP_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 529 SET_ARGBW_STRIP_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 530 SET_ANALOG_STRIP_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 530 SET_ANALOG_STRIP_COLOR: 8 Vector__XXX
+ SG_ green_value : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ blue_value : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ red_value : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 531 SET_ADDR_STRIP_EFFECT: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 531 SET_ADDR_STRIP_EFFECT: 6 Vector__XXX
+ SG_ effect_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 532 SET_LED_STRIP_BRIGHTNESS: 7 Vector__XXX
- SG_ brightness : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 532 SET_LED_STRIP_BRIGHTNESS: 6 Vector__XXX
+ SG_ brightness : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -269,8 +271,8 @@ BO_ 542 SET_LED_RESERVED_21E: 4 Vector__XXX
 BO_ 543 SET_LED_RESERVED_21F: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 544 SET_ARGB_BUTTON_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 544 SET_ARGB_BUTTON_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -371,10 +373,10 @@ BO_ 1038 REQ_RESERVED_40E: 4 Vector__XXX
 BO_ 1039 REQ_RESERVED_40F: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1040 REQ_BUTTONS: 4 Vector__XXX
+BO_ 1040 REQ_DIGITAL_INPUTS: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1041 REQ_OUTPUTS: 4 Vector__XXX
+BO_ 1041 REQ_DIGITAL_OUTPUTS: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1042 REQ_DISPLAYS: 4 Vector__XXX
@@ -389,7 +391,7 @@ BO_ 1044 REQ_VOLT_SENSOR: 4 Vector__XXX
 BO_ 1045 REQ_AMP_SENSOR: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1046 REQ_CLOSURE_INPUT: 4 Vector__XXX
+BO_ 1046 REQ_ANALOG_INPUTS: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1047 REQ_AMBIENT_LIGHT: 4 Vector__XXX
@@ -401,43 +403,73 @@ BO_ 1048 REQ_IMU_SENSORS: 4 Vector__XXX
 BO_ 1049 REQ_RESERVED_419: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1050 REQ_RESERVED_41A: 4 Vector__XXX
+BO_ 1050 CFG_RESERVED_41A: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1051 REQ_RESERVED_41B: 4 Vector__XXX
+BO_ 1051 CFG_RESERVED_41B: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1052 REQ_RESERVED_41C: 4 Vector__XXX
+BO_ 1052 CFG_REBOOT: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1053 REQ_RESERVED_41D: 4 Vector__XXX
+BO_ 1053 CFG_WRITE_NVS: 6 Vector__XXX
+ SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1054 REQ_RESERVED_41E: 4 Vector__XXX
+BO_ 1054 CFG_READ_NVS: 6 Vector__XXX
+ SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1055 REQ_RESERVED_41F: 4 Vector__XXX
+BO_ 1055 CFG_BLINK_OUTPUT: 8 Vector__XXX
+ SG_ is_inverted : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ strobe_pattern : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ blink_delay : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1056 REQ_RESERVED_420: 4 Vector__XXX
+BO_ 1056 CFG_ANALOG_STRIP: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_cfg_index : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ color_order : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ strip_number : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1057 REQ_RESERVED_421: 4 Vector__XXX
+BO_ 1057 CFG_ARGB_STRIP: 8 Vector__XXX
+ SG_ output_pin : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ color_order : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ led_count : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1083 REQ_RESERVED_43B: 4 Vector__XXX
+BO_ 1083 CFG_DIGITAL_INPUT: 8 Vector__XXX
+ SG_ is_inverted : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ debounce_count : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_resistor : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ input_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1084 REQ_RESERVED_43C: 4 Vector__XXX
+BO_ 1084 CFG_DIGITAL_OUTPUT: 8 Vector__XXX
+ SG_ is_inverted : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_mode : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ mom_duration : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1085 REQ_RESERVED_43D: 4 Vector__XXX
+BO_ 1085 CFG_ANALOG_INPUT: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ over_sample_cnt : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ input_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1086 REQ_RESERVED_43E: 4 Vector__XXX
+BO_ 1086 CFG_ANALOG_OUTPUT: 8 Vector__XXX
+ SG_ reserved : 55|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_mode : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1087 REQ_RESERVED_43F: 4 Vector__XXX
+BO_ 1087 CFG_PWM_OUTPUT: 8 Vector__XXX
+ SG_ is_inverted : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pwm_freq : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1280 DATA_BUTTON_DOWN: 7 Vector__XXX
@@ -475,8 +507,9 @@ BO_ 1286 DATA_DIAL_CLICK: 7 Vector__XXX
  SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1287 DATA_EXTERNAL_CURRENT1: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1287 DATA_EXTERNAL_CURRENT: 8 Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1288 DATA_CONTACT_CLOSED: 7 Vector__XXX
@@ -490,27 +523,33 @@ BO_ 1289 DATA_CONTACT_OPENED: 7 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1290 DATA_INTERNAL_PCB_TEMP: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1291 DATA_INTERNAL_PCB_VOLTS: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1292 DATA_INTERNAL_PCB_CURRENT: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1293 DATA_EXTERNAL_TEMPERATURE1: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1293 DATA_EXTERNAL_TEMPERATURE: 8 Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1294 DATA_EXTERNAL_VOLTS1: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1294 DATA_EXTERNAL_VOLTS: 8 Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1295 DATA_EXTERNAL_CURRENT2: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1295 DATA_DATA_RESERVED_50F: 8 Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1296 DATA_AMBIENT_LIGHT_USE_PRIV_MSG: 5 Vector__XXX
@@ -545,36 +584,32 @@ BO_ 1303 DATA_IMU_TEMPERATURE: 8 Vector__XXX
  SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1304 DATA_ANALOG_KNOB1: 6 Vector__XXX
- SG_ sensor_data : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1304 DATA_ANALOG_KNOB_MV: 8 Vector__XXX
+ SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1305 DATA_ANALOG_KNOB2: 6 Vector__XXX
- SG_ sensor_data : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1305 DATA_DATA_RESERVED_519: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1306 DATA_NODE_CPU_TEMP: 8 Vector__XXX
  SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1307 DATA_NODE_LAST_BOOT_TIMESTAMP: 8 Vector__XXX
+BO_ 1307 DATA_NODE_BOOT_TIMESTAMP: 8 Vector__XXX
  SG_ unixtime : 39|32@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1308 DATA_EXTERNAL_CURRENT3: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1308 DATA_TOUCHSCREEN_EVENT: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1309 DATA_ANALOG_KNOB3: 6 Vector__XXX
- SG_ sensor_data : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1309 DATA_RESERVED_51D: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1310 DATA_ANALOG_KNOB4: 6 Vector__XXX
- SG_ sensor_data : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1310 DATA_RESERVED_51E: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1311 DATA_EXTERNAL_CURRENT4: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1311 DATA_RESERVED_51F: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1312 DATA_DISPLAY_OFF: 5 Vector__XXX
@@ -594,8 +629,8 @@ BO_ 1315 DATA_DISPLAY_MODE: 6 Vector__XXX
  SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1316 DATA_ARGB_BUTTON_COLOR: 7 Vector__XXX
- SG_ color_code : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1316 DATA_ARGB_BUTTON_COLOR: 6 Vector__XXX
+ SG_ color_index : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -604,20 +639,19 @@ BO_ 1317 DATA_ARGB_BUTTON_LED_MODE: 7 Vector__XXX
  SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1318 DATA_EXTERNAL_TEMPERATURE2: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1318 DATA_CONFIG_CRC: 6 Vector__XXX
+ SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1319 DATA_EXTERNAL_TEMPERATURE3: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1319 DATA_CONFIG_TIMESTAMP: 8 Vector__XXX
+ SG_ unixtime : 39|32@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1320 DATA_EXTERNAL_TEMPERATURE4: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1320 DATA_CFGWRITE_FAILED: 6 Vector__XXX
+ SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1321 DATA_EXTERNAL_VOLTS2: 8 Vector__XXX
- SG_ sensor_data : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1321 DATA_RESERVED_529: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1322 DATA_RESERVED_52A: 8 Vector__XXX
@@ -686,592 +720,1044 @@ BO_ 1342 DATA_RESERVED_53E: 8 Vector__XXX
 BO_ 1343 DATA_RESERVED_53F: 8 Vector__XXX
  SG_ sensor_data : 7|64@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1792 DISP_ANALOG_LED_STRIP: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1792 DISP_ANALOG_LED_STRIP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1793 DISP_ARGBW_LED_STRIP: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1793 DISP_ARGBW_LED_STRIP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1794 DISP_ARGB_LED_STRIP: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1794 DISP_ARGB_LED_STRIP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1795 DISP_RESERVED_703: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1795 DISP_STROBE_MODULE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1796 DISP_RESERVED_704: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1796 DISP_RESERVED_704: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1797 DISP_OLED: 7 Vector__XXX
- SG_ disp_features : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1797 DISP_OLED: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1798 DISP_RESERVED_706: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1798 DISP_RESERVED_706: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1799 DISP_LCD: 7 Vector__XXX
- SG_ disp_features : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ display_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1799 DISP_LCD: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1800 DISP_RESERVED_708: 4 Vector__XXX
+BO_ 1800 DISP_NO_BACKLIGHT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1801 DISP_RESERVED_709: 4 Vector__XXX
+BO_ 1801 DISP_ARGB_BACKLIGHT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1802 DISP_RESERVED_70A: 4 Vector__XXX
+BO_ 1802 DISP_ANALOG_BACKLIGHT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1803 DISP_RESERVED_70B: 4 Vector__XXX
+BO_ 1803 DISP_TOUCHSCREEN_LCD: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1804 DISP_RESERVED_70C: 4 Vector__XXX
+BO_ 1804 DISP_RESERVED_70C: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1805 DISP_RESERVED_70D: 4 Vector__XXX
+BO_ 1805 DISP_RESERVED_70D: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1806 DISP_RESERVED_70E: 4 Vector__XXX
+BO_ 1806 DISP_RESERVED_70E: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1807 DISP_RESERVED_70F: 4 Vector__XXX
+BO_ 1807 DISP_RESERVED_70F: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1808 INPUT_NO_BACKLIGHT: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1808 INPUT_ANALOG_ADC: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1809 INPUT_ARGB_BACKLIGHT: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1809 INPUT_DIGITAL_GPIO: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1810 INPUT_ANALOG_BACKLIGHT: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1810 INPUT_RESERVED_712: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1811 INPUT_VIRTUAL: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1811 INPUT_VIRTUAL_KEYPAD: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1812 INPUT_WITH_DISPLAY: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1812 INPUT_ANALOG_KNOB: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1813 INPUT_ANALOG_KNOB: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1813 INPUT_JOG_DIAL_CLICK: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1814 INPUT_JOG_DIAL_CLICK: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1814 INPUT_JOG_DIAL_NOCLICK: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1815 INPUT_KEY_SWITCH: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1815 INPUT_MOTION_DET: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1816 INPUT_MOTION_DET: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1816 INPUT_CAP_TOUCH: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1817 INPUT_CAP_TOUCH: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1817 INPUT_RESERVED_719: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1818 INPUT_JOG_DIAL_NOCLICK: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1818 INPUT_RESERVED_71A: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1819 INPUT_RFID_READER: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1819 INPUT_RESERVED_71B: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1820 BUTTON_CONTACT_PULL_DOWN: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1820 INPUT_RESERVED_71C: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1821 INPUT_CONTACT_PULL_UP: 7 Vector__XXX
- SG_ feature_mask : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ button_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1821 INPUT_RESERVED_71D: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1822 INPUT_RESERVED_71E: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1822 INPUT_RESERVED_71E: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1823 INPUT_RESERVED_71F: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1823 INPUT_RESERVED_71F: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1824 INPUT_DIGITAL_TEMP: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1824 SENSOR_DIGITAL_TEMP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1825 INPUT_K_TYPE_TEMP: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1825 SENSOR_KTYPE_TEMP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1826 NODE_LASTBOOT: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1826 SENSOR_NODE_LASTBOOT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1827 NODE_PCB_TEMP: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1827 SENSOR_NODE_PCB_TEMP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1828 NODE_CPU_TEMP: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1828 SENSOR_NODE_CPU_TEMP: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1829 INPUT_EXT_VOLTAGE_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1829 SENSOR_EXT_VOLTAGE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1830 NODE_INT_VOLTAGE_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1830 SENSOR_INT_VOLTAGE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1831 NODE_INT_CURRENT_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1831 SENSOR_INT_CURRENT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1832 INPUT_EXT_CURRENT_SHUNT: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1832 SENSOR_EXT_CURRENT_SHUNT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1833 INPUT_EXT_CURRENT_HALL: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1833 SENSOR_EXT_CURRENT_HALL: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1834 SENSOR_RESERVED_72A: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1834 SENSOR_RESERVED_72A: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1835 SENSOR_RESERVED_72B: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1835 SENSOR_RESERVED_72B: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1836 SENSOR_RESERVED_72C: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1836 SENSOR_RESERVED_72C: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1837 SENSOR_RESERVED_72D: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1837 SENSOR_RESERVED_72D: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1838 SENSOR_RESERVED_72E: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1838 SENSOR_RESERVED_72E: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1839 SENSOR_RESERVED_72F: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1839 SENSOR_RESERVED_72F: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1840 INPUT_AMBIENT_LIGHT: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1840 INPUT_AMBIENT_LIGHT: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1841 IMU_X_AXIS_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1841 IMU_X_AXIS_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1842 IMU_Y_AXIS_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1842 IMU_Y_AXIS_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1843 IMU_Z_AXIS_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1843 IMU_Z_AXIS_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1844 IMU_X_GYRO_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1844 IMU_X_GYRO_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1845 IMU_Y_GYRO_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1845 IMU_Y_GYRO_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1846 IMU_Z_GYRO_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1846 IMU_Z_GYRO_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1847 IMU_TEMP_SENSOR: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1847 IMU_TEMP_SENSOR: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1848 GPS_UTC_TIME: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1848 GPS_UTC_TIME: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1849 GPS_LATITUDE: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1849 GPS_LATITUDE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1850 GPS_NS_IND: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1850 GPS_NS_IND: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1851 GPS_LONGITUDE: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1851 GPS_LONGITUDE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1852 GPS_EW_IND: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1852 GPS_EW_IND: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1853 GPS_ALTITUDE: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1853 GPS_ALTITUDE: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1854 GPS_STATUS: 5 Vector__XXX
- SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1854 GPS_STATUS: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1855 SENSOR2_RESERVED_73F: 4 Vector__XXX
+BO_ 1855 SENSOR2_RESERVED_73F: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1856 OUT_HIGH_CURRENT_SW: 7 Vector__XXX
- SG_ switch_info : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ switch_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1856 OUT_HIGH_CURRENT_SW: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1857 OUT_LOW_CURRENT_SW: 7 Vector__XXX
- SG_ switch_info : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ switch_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1857 OUT_LOW_CURRENT_SW: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1858 OUT_OPEN_DRAIN: 7 Vector__XXX
- SG_ switch_info : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ switch_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1858 OUT_OPEN_DRAIN: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1859 OUT_MECH_RELAY: 7 Vector__XXX
- SG_ switch_info : 47|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ switch_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1859 OUT_MECH_RELAY: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1860 OUT_RESERVED_744: 4 Vector__XXX
+BO_ 1860 OUT_RESERVED_744: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1861 OUT_RESERVED_745: 4 Vector__XXX
+BO_ 1861 OUT_RESERVED_745: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1862 OUT_RESERVED_746: 4 Vector__XXX
+BO_ 1862 OUT_RESERVED_746: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1863 OUT_RESERVED_747: 4 Vector__XXX
+BO_ 1863 OUT_RESERVED_747: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1864 OUT_RESERVED_748: 4 Vector__XXX
+BO_ 1864 OUT_RESERVED_748: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1865 OUT_RESERVED_749: 4 Vector__XXX
+BO_ 1865 OUT_RESERVED_749: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1866 OUT_RESERVED_74A: 4 Vector__XXX
+BO_ 1866 OUT_RESERVED_74A: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1867 OUT_RESERVED_74B: 4 Vector__XXX
+BO_ 1867 OUT_RESERVED_74B: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1868 OUT_RESERVED_74C: 4 Vector__XXX
+BO_ 1868 OUT_RESERVED_74C: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1869 OUT_RESERVED_74D: 4 Vector__XXX
+BO_ 1869 OUT_RESERVED_74D: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1870 OUT_RESERVED_74E: 4 Vector__XXX
+BO_ 1870 OUT_RESERVED_74E: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1871 OUT_RESERVED_74F: 4 Vector__XXX
+BO_ 1871 OUT_RESERVED_74F: 8 Vector__XXX
+ SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1872 INTRO_RESERVED_750: 4 Vector__XXX
+BO_ 1872 INTRO_RESERVED_750: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1873 INTRO_RESERVED_751: 4 Vector__XXX
+BO_ 1873 INTRO_RESERVED_751: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1874 INTRO_RESERVED_752: 4 Vector__XXX
+BO_ 1874 INTRO_RESERVED_752: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1875 INTRO_RESERVED_753: 4 Vector__XXX
+BO_ 1875 INTRO_RESERVED_753: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1876 INTRO_RESERVED_754: 4 Vector__XXX
+BO_ 1876 INTRO_RESERVED_754: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1877 INTRO_RESERVED_755: 4 Vector__XXX
+BO_ 1877 INTRO_RESERVED_755: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1878 INTRO_RESERVED_756: 4 Vector__XXX
+BO_ 1878 INTRO_RESERVED_756: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1879 INTRO_RESERVED_757: 4 Vector__XXX
+BO_ 1879 INTRO_RESERVED_757: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1880 INTRO_RESERVED_758: 4 Vector__XXX
+BO_ 1880 INTRO_RESERVED_758: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1881 INTRO_RESERVED_759: 4 Vector__XXX
+BO_ 1881 INTRO_RESERVED_759: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1882 INTRO_RESERVED_75A: 4 Vector__XXX
+BO_ 1882 INTRO_RESERVED_75A: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1883 INTRO_RESERVED_75B: 4 Vector__XXX
+BO_ 1883 INTRO_RESERVED_75B: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1884 INTRO_RESERVED_75C: 4 Vector__XXX
+BO_ 1884 INTRO_RESERVED_75C: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1885 INTRO_RESERVED_75D: 4 Vector__XXX
+BO_ 1885 INTRO_RESERVED_75D: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1886 INTRO_RESERVED_75E: 4 Vector__XXX
+BO_ 1886 INTRO_RESERVED_75E: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1887 INTRO_RESERVED_75F: 4 Vector__XXX
+BO_ 1887 INTRO_RESERVED_75F: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1888 SYS_RESERVED_760: 4 Vector__XXX
+BO_ 1888 SYS_RESERVED_760: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1889 SYS_RESERVED_761: 4 Vector__XXX
+BO_ 1889 SYS_RESERVED_761: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1890 SYS_RESERVED_762: 4 Vector__XXX
+BO_ 1890 SYS_RESERVED_762: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1891 SYS_RESERVED_763: 4 Vector__XXX
+BO_ 1891 SYS_RESERVED_763: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1892 SYS_RESERVED_764: 4 Vector__XXX
+BO_ 1892 SYS_RESERVED_764: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1893 SYS_RESERVED_765: 4 Vector__XXX
+BO_ 1893 SYS_RESERVED_765: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1894 SYS_RESERVED_766: 4 Vector__XXX
+BO_ 1894 SYS_RESERVED_766: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1895 SYS_RESERVED_767: 4 Vector__XXX
+BO_ 1895 SYS_RESERVED_767: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1896 SYS_RESERVED_768: 4 Vector__XXX
+BO_ 1896 SYS_RESERVED_768: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1897 SYS_RESERVED_769: 4 Vector__XXX
+BO_ 1897 SYS_RESERVED_769: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1898 SYS_RESERVED_76A: 4 Vector__XXX
+BO_ 1898 SYS_RESERVED_76A: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1899 SYS_RESERVED_76B: 4 Vector__XXX
+BO_ 1899 SYS_RESERVED_76B: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1900 SYS_RESERVED_76C: 4 Vector__XXX
+BO_ 1900 SYS_RESERVED_76C: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1901 SYS_RESERVED_76D: 4 Vector__XXX
+BO_ 1901 SYS_RESERVED_76D: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1902 SYS_RESERVED_76E: 4 Vector__XXX
+BO_ 1902 SYS_RESERVED_76E: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1903 SYS_RESERVED_76F: 4 Vector__XXX
+BO_ 1903 SYS_RESERVED_76F: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1904 SYS_RESERVED_770: 4 Vector__XXX
+BO_ 1904 SYS_RESERVED_770: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1905 SYS_RESERVED_771: 4 Vector__XXX
+BO_ 1905 SYS_RESERVED_771: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1906 SYS_RESERVED_772: 4 Vector__XXX
+BO_ 1906 SYS_RESERVED_772: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1907 SYS_RESERVED_773: 4 Vector__XXX
+BO_ 1907 SYS_RESERVED_773: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1908 SYS_RESERVED_774: 4 Vector__XXX
+BO_ 1908 SYS_RESERVED_774: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1909 SYS_RESERVED_775: 4 Vector__XXX
+BO_ 1909 SYS_RESERVED_775: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1910 SYS_RESERVED_776: 4 Vector__XXX
+BO_ 1910 SYS_RESERVED_776: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1911 SYS_RESERVED_777: 4 Vector__XXX
+BO_ 1911 SYS_RESERVED_777: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1912 SYS_RESERVED_778: 4 Vector__XXX
+BO_ 1912 SYS_RESERVED_778: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1913 SYS_RESERVED_779: 4 Vector__XXX
+BO_ 1913 SYS_RESERVED_779: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1914 SYS_RESERVED_77A: 4 Vector__XXX
+BO_ 1914 SYS_RESERVED_77A: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1915 SYS_RESERVED_77B: 4 Vector__XXX
+BO_ 1915 SYS_RESERVED_77B: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1916 SYS_RESERVED_77C: 4 Vector__XXX
+BO_ 1916 SYS_RESERVED_77C: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1917 SYS_RESERVED_77D: 4 Vector__XXX
+BO_ 1917 SYS_RESERVED_77D: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1918 SYS_RESERVED_77E: 4 Vector__XXX
+BO_ 1918 SYS_RESERVED_77E: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1919 SYS_RESERVED_77F: 4 Vector__XXX
+BO_ 1919 SYS_RESERVED_77F: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1920 BOX_SW_3GANG: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1920 BOX_SW_3GANG: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1921 BOX_SW_4GANG: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1921 BOX_SW_4GANG: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1922 BOX_SW_6GANG_HIGH: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1922 BOX_SW_6GANG_HIGH: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1923 BOX_SW_6GANG_LOW: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1923 BOX_SW_6GANG_LOW: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1924 BOX_SW_2GANG_HIGH: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1924 BOX_SW_2GANG_HIGH: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1925 BOX_SW_2GANG_LOW: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1925 BOX_SW_2GANG_LOW: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1926 BOX_MULTI_4XTEMP: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1926 BOX_MULTI_4XTEMP: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1927 BOX_SW_4RELAY: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1927 BOX_SW_4RELAY: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1928 BOX_MULTI_TVA: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1928 BOX_MULTI_TVA: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1929 BOX_SW_8RELAY: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1929 BOX_SW_8RELAY: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1930 BOX_MULTI_4X4IO: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1930 BOX_MULTI_4X4IO: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1931 BOX_MULTI_IO: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1931 BOX_MULTI_IO: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1932 BOX_RESERVED_78C: 4 Vector__XXX
+BO_ 1932 BOX_RESERVED_78C: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1933 BOX_RESERVED_78D: 4 Vector__XXX
+BO_ 1933 BOX_RESERVED_78D: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1934 BOX_RESERVED_78E: 4 Vector__XXX
+BO_ 1934 BOX_RESERVED_78E: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1935 BOX_RESERVED_78F: 4 Vector__XXX
+BO_ 1935 BOX_RESERVED_78F: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1936 IFACE_8X4_ARGB_KEYPAD: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1936 IFACE_8X4_ARGB_KEYPAD: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1937 IFACE_4X4_ARGB_KEYPAD: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1937 IFACE_4X4_ARGB_KEYPAD: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1938 IFACE_TOUCHSCREEN_TYPE_A: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1938 IFACE_TOUCHSCREEN_TYPE_A: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1939 IFACE_TOUCHSCREEN_TYPE_B: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1939 IFACE_TOUCHSCREEN_TYPE_B: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1940 IFACE_NEXTION_TYPE_A: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1940 IFACE_NEXTION_TYPE_A: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1941 IFACE_NEXTION_TYPE_B: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1941 IFACE_NEXTION_TYPE_B: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1942 IFACE_RESERVED_796: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1942 IFACE_RESERVED_796: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1943 IFACE_RESERVED_797: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1943 IFACE_RESERVED_797: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1944 IFACE_RESERVED_798: 4 Vector__XXX
+BO_ 1944 IFACE_RESERVED_798: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1945 IFACE_6_AXIS_IMU: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1945 IFACE_6_AXIS_IMU: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1946 IFACE_3X5_BUTTON_BOX: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1946 IFACE_3X5_BUTTON_BOX: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1947 IFACE_4X6_BUTTON_BOX: 6 Vector__XXX
- SG_ feature_mask : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1947 IFACE_4X6_BUTTON_BOX: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1948 IFACE_RESERVED_79C: 4 Vector__XXX
+BO_ 1948 IFACE_ARGB_MULTI: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1949 IFACE_RESERVED_79D: 4 Vector__XXX
+BO_ 1949 IFACE_RESERVED_79D: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1950 IFACE_RESERVED_79E: 4 Vector__XXX
+BO_ 1950 IFACE_RESERVED_79E: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1951 IFACE_RESERVED_79F: 4 Vector__XXX
+BO_ 1951 IFACE_RESERVED_79F: 8 Vector__XXX
+ SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ crc16 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ submodule_count : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 
@@ -1373,29 +1859,29 @@ CM_ BO_ 1036 "epoch timestamp from controller";
 CM_ BO_ 1037 "controller assigned message id to use for transferring sensor data range 52A:53F";
 CM_ BO_ 1038 "req reserved 40e";
 CM_ BO_ 1039 "req reserved 40f";
-CM_ BO_ 1040 "req buttons";
-CM_ BO_ 1041 "req outputs";
-CM_ BO_ 1042 "req displays";
+CM_ BO_ 1040 "req digital inputs (gpio type)";
+CM_ BO_ 1041 "req digital outputs (gpio type)";
+CM_ BO_ 1042 "req displays (eg lcd, oled, argb, led)";
 CM_ BO_ 1043 "req temp sensor";
 CM_ BO_ 1044 "req volt sensor";
 CM_ BO_ 1045 "req amp sensor";
-CM_ BO_ 1046 "req closure input";
+CM_ BO_ 1046 "req analog inputs";
 CM_ BO_ 1047 "req ambient light sensors";
 CM_ BO_ 1048 "req imu sensors";
 CM_ BO_ 1049 "req reserved 419";
-CM_ BO_ 1050 "req reserved 41a";
-CM_ BO_ 1051 "req reserved 41b";
-CM_ BO_ 1052 "req reserved 41c";
-CM_ BO_ 1053 "req reserved 41d";
-CM_ BO_ 1054 "req reserved 41e";
-CM_ BO_ 1055 "req reserved 41f";
-CM_ BO_ 1056 "req reserved 420";
-CM_ BO_ 1057 "req reserved 421";
-CM_ BO_ 1083 "req reserved 43b";
-CM_ BO_ 1084 "req reserved 43c";
-CM_ BO_ 1085 "req reserved 43d";
-CM_ BO_ 1086 "req reserved 43e";
-CM_ BO_ 1087 "req reserved 43f";
+CM_ BO_ 1050 "cfg reserved 41a";
+CM_ BO_ 1051 "cfg reserved 41b";
+CM_ BO_ 1052 "cfg reboot";
+CM_ BO_ 1053 "cfg write nvs";
+CM_ BO_ 1054 "cfg read nvs";
+CM_ BO_ 1055 "cfg blink output";
+CM_ BO_ 1056 "cfg analog strip";
+CM_ BO_ 1057 "cfg argb strip";
+CM_ BO_ 1083 "cfg digital input";
+CM_ BO_ 1084 "cfg digital output";
+CM_ BO_ 1085 "cfg analog input";
+CM_ BO_ 1086 "cfg analog output";
+CM_ BO_ 1087 "cfg pwm output";
 CM_ BO_ 1280 "button down";
 CM_ BO_ 1281 "button up";
 CM_ BO_ 1282 "keyswitch lock";
@@ -1403,15 +1889,15 @@ CM_ BO_ 1283 "keyswitch unlock";
 CM_ BO_ 1284 "dial clockwise";
 CM_ BO_ 1285 "dial counter clockwise";
 CM_ BO_ 1286 "dial click";
-CM_ BO_ 1287 "external current1";
+CM_ BO_ 1287 "external current";
 CM_ BO_ 1288 "contact closed";
 CM_ BO_ 1289 "contact opened";
 CM_ BO_ 1290 "internal pcb temp";
 CM_ BO_ 1291 "internal pcb volts";
 CM_ BO_ 1292 "internal pcb current";
-CM_ BO_ 1293 "external temperature1";
-CM_ BO_ 1294 "external volts1";
-CM_ BO_ 1295 "external current2";
+CM_ BO_ 1293 "external temperature";
+CM_ BO_ 1294 "external volts";
+CM_ BO_ 1295 "data reserved 50f";
 CM_ BO_ 1296 "ambient light USE PRIV MSG";
 CM_ BO_ 1297 "IMU X Axis USE PRIV MSG";
 CM_ BO_ 1298 "IMU Y Axis USE PRIV MSG";
@@ -1420,24 +1906,24 @@ CM_ BO_ 1300 "IMU X Gyro USE PRIV MSG";
 CM_ BO_ 1301 "IMU Y Gyro USE PRIV MSG";
 CM_ BO_ 1302 "IMU Z Gyro USE PRIV MSG";
 CM_ BO_ 1303 "IMU temperature";
-CM_ BO_ 1304 "analog knob1";
-CM_ BO_ 1305 "analog knob2";
+CM_ BO_ 1304 "analog knob mv";
+CM_ BO_ 1305 "data reserved 519";
 CM_ BO_ 1306 "node cpu temp";
-CM_ BO_ 1307 "node last boot timestamp";
-CM_ BO_ 1308 "external current3";
-CM_ BO_ 1309 "analog knob3";
-CM_ BO_ 1310 "analog knob4";
-CM_ BO_ 1311 "external current4";
+CM_ BO_ 1307 "node boot timestamp";
+CM_ BO_ 1308 "data touchscreen event";
+CM_ BO_ 1309 "data reserved 51d";
+CM_ BO_ 1310 "data reserved 51e";
+CM_ BO_ 1311 "data reserved 51f";
 CM_ BO_ 1312 "display off";
 CM_ BO_ 1313 "display on";
 CM_ BO_ 1314 "display clear";
 CM_ BO_ 1315 "display mode";
 CM_ BO_ 1316 "argb button color";
 CM_ BO_ 1317 "argb button led mode";
-CM_ BO_ 1318 "external temperature2";
-CM_ BO_ 1319 "external temperature3";
-CM_ BO_ 1320 "external temperature4";
-CM_ BO_ 1321 "external volts2";
+CM_ BO_ 1318 "data config crc";
+CM_ BO_ 1319 "data config timestamp";
+CM_ BO_ 1320 "data cfgwrite failed";
+CM_ BO_ 1321 "data reserved 529";
 CM_ BO_ 1322 "0x52A reserved private msg for 64-bit sensor data";
 CM_ BO_ 1323 "0x52B reserved private msg for 64-bit sensor data";
 CM_ BO_ 1324 "0x52C reserved private msg for 64-bit sensor data";
@@ -1463,45 +1949,45 @@ CM_ BO_ 1343 "0x53F reserved private msg for 64-bit sensor data";
 CM_ BO_ 1792 "analog led strip";
 CM_ BO_ 1793 "argbw led strip";
 CM_ BO_ 1794 "argb led strip";
-CM_ BO_ 1795 "disp reserved 703";
+CM_ BO_ 1795 "disp strobe module";
 CM_ BO_ 1796 "disp reserved 704";
 CM_ BO_ 1797 "non-touch oled display";
 CM_ BO_ 1798 "disp reserved 706";
 CM_ BO_ 1799 "non-touch lcd display";
-CM_ BO_ 1800 "disp reserved 708";
-CM_ BO_ 1801 "disp reserved 709";
-CM_ BO_ 1802 "disp reserved 70a";
-CM_ BO_ 1803 "disp reserved 70b";
+CM_ BO_ 1800 "disp no backlight";
+CM_ BO_ 1801 "disp argb backlight";
+CM_ BO_ 1802 "disp analog backlight";
+CM_ BO_ 1803 "disp touchscreen lcd";
 CM_ BO_ 1804 "disp reserved 70c";
 CM_ BO_ 1805 "disp reserved 70d";
 CM_ BO_ 1806 "disp reserved 70e";
 CM_ BO_ 1807 "disp reserved 70f";
-CM_ BO_ 1808 "input no backlight";
-CM_ BO_ 1809 "input argb backlight";
-CM_ BO_ 1810 "input analog backlight";
-CM_ BO_ 1811 "input virtual";
-CM_ BO_ 1812 "input with display";
-CM_ BO_ 1813 "analog knob input";
-CM_ BO_ 1814 "jog dial with click";
-CM_ BO_ 1815 "key switch";
-CM_ BO_ 1816 "motion detector";
-CM_ BO_ 1817 "capacitive touch switch stand-alone";
-CM_ BO_ 1818 "jog dial without click";
-CM_ BO_ 1819 "RFID reader input";
-CM_ BO_ 1820 "button contact pull down";
-CM_ BO_ 1821 "input contact pull up";
+CM_ BO_ 1808 "input analog adc";
+CM_ BO_ 1809 "input digital gpio";
+CM_ BO_ 1810 "input reserved 712";
+CM_ BO_ 1811 "input virtual keypad";
+CM_ BO_ 1812 "analog knob input";
+CM_ BO_ 1813 "jog dial with click";
+CM_ BO_ 1814 "jog dial without click";
+CM_ BO_ 1815 "motion detector";
+CM_ BO_ 1816 "capacitive touch switch stand-alone";
+CM_ BO_ 1817 "input reserved 719";
+CM_ BO_ 1818 "input reserved 71a";
+CM_ BO_ 1819 "input reserved 71b";
+CM_ BO_ 1820 "input reserved 71c";
+CM_ BO_ 1821 "input reserved 71d";
 CM_ BO_ 1822 "input reserved 71e";
 CM_ BO_ 1823 "input reserved 71f";
-CM_ BO_ 1824 "input digital temp";
-CM_ BO_ 1825 "input k type temp";
-CM_ BO_ 1826 "last boot timestamp";
-CM_ BO_ 1827 "node pcb temp";
-CM_ BO_ 1828 "node cpu temp";
-CM_ BO_ 1829 "input ext voltage sensor";
-CM_ BO_ 1830 "node int voltage sensor";
-CM_ BO_ 1831 "node int current sensor";
-CM_ BO_ 1832 "input ext current shunt";
-CM_ BO_ 1833 "input ext current hall";
+CM_ BO_ 1824 "sensor digital temp";
+CM_ BO_ 1825 "sensor ktype temp";
+CM_ BO_ 1826 "sensor node last boot timestamp";
+CM_ BO_ 1827 "sensor node pcb temp";
+CM_ BO_ 1828 "sensor node cpu temp";
+CM_ BO_ 1829 "sensor ext voltage";
+CM_ BO_ 1830 "sensor int voltage";
+CM_ BO_ 1831 "sensor int current";
+CM_ BO_ 1832 "sensor ext current shunt";
+CM_ BO_ 1833 "sensor ext current hall";
 CM_ BO_ 1834 "sensor reserved 72a";
 CM_ BO_ 1835 "sensor reserved 72b";
 CM_ BO_ 1836 "sensor reserved 72c";
@@ -1616,7 +2102,7 @@ CM_ BO_ 1944 "iface reserved 798";
 CM_ BO_ 1945 "6 axis imu";
 CM_ BO_ 1946 "3x5 button box";
 CM_ BO_ 1947 "4x6 button box";
-CM_ BO_ 1948 "iface reserved 79c";
+CM_ BO_ 1948 "iface ARGB multi";
 CM_ BO_ 1949 "iface reserved 79d";
 CM_ BO_ 1950 "iface reserved 79e";
 CM_ BO_ 1951 "iface reserved 79f";

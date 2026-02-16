@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #####Setup Instructions
 ##   python3 -m venv venv
 ##   source venv/bin/activate
