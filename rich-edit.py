@@ -39,7 +39,8 @@ CFG_MAP = {
 
 SUBMODULE_STRUCT_SIZE = 16
 NODEINFO_STRUCT_SIZE  = 136
-NVS_TIMEOUT_SECONDS   = 5 # Wait for ESP32 flash confirmation
+NVS_TIMEOUT_SECONDS   = 5
+EMPTY_CONFIG_CRC      = 0xFFFF # Sentinel value indicating uninitialized NVS
 
 def crc16_ccitt(data: bytes, initial=0xFFFF):
     crc = initial
@@ -198,7 +199,7 @@ class App:
         target_id = node_ids[self.selected_idx % len(node_ids)]
         node = self.state.nodes[target_id]
 
-        if not node['interview_complete'] or node['calculated_crc'] == node['reported_crc']:
+        if not node['interview_complete'] or (node['calculated_crc'] == node['reported_crc'] and node['reported_crc'] != EMPTY_CONFIG_CRC):
             self.add_log("No changes to persist.", target_id)
             self.interaction_active = False
             return
@@ -244,11 +245,17 @@ class App:
             hb = int(now - n['last_rx'])
             hb_col = "red" if hb > 10 else "white"
             
-            # Use bright cyan for the active summary if filtering is on and this is the target
             sum_color = "cyan" if (self.filter_enabled and is_sel) else "dim"
             mod_summary = [f"M{k}:[{sum_color}]{CFG_MAP.get(s['intro_id'], f'0x{s['intro_id']:03X}')}[/]" for k, s in sorted(n['subs'].items())]
             
-            crc_str = "[green]MATCH[/]" if n['interview_complete'] and n['calculated_crc'] == n['reported_crc'] else "[yellow]MODIFIED[/]"
+            # Logic for NEEDS CONFIG or MATCH/MODIFIED
+            if n['reported_crc'] == EMPTY_CONFIG_CRC:
+                crc_str = "[bold red]NEEDS CONFIG[/]"
+            elif n['interview_complete'] and n['calculated_crc'] == n['reported_crc']:
+                crc_str = "[green]MATCH[/]"
+            else:
+                crc_str = "[yellow]MODIFIED[/]"
+                
             table.add_row(marker, f"0x{nid:08X}", f"[{hb_col}]{hb}s[/]", " ".join(mod_summary), crc_str, n['nvs_status'], style=row_style)
 
         l = Layout()
