@@ -4,7 +4,6 @@ import struct
 import threading
 import queue
 from collections import deque
-from datetime import datetime
 import platform
 import sys
 import argparse
@@ -26,23 +25,24 @@ except ImportError:
 # --- Configuration & Message IDs ---
 ACK_INTRO_ID       = 0x400  # Master -> Node: [ID_32]
 REQ_NODE_INTRO_ID  = 0x401  # Master -> Bus: [0,0,0,0]
-EPOCH_ID           = 0x40C  # Heartbeat/Time Sync
-KNOB_ID            = 0x518  # Telemetry: Knob
-TEMP_ID            = 0x51A  # Telemetry: Temp
+KNOB_ID            = 0x518  # Telemetry examples
+TEMP_ID            = 0x51A
 
 DEFAULT_CAN_INTERFACE = 'can0'
 LOG_MAX_LINES         = 2000
 
-# Constants for struct reconstruction
-SUBMODULE_STRUCT_SIZE = 16  # Matches ESP32 sizeof(subModule_t) including tail padding
-NODEINFO_STRUCT_SIZE  = 136 # Matches ESP32 sizeof(nodeInfo_t) (16*8 + 8 metadata)
+# Constants matching ESP32 debug output
+SUBMODULE_STRUCT_SIZE = 16  # sizeof(subModule_t)
+NODEINFO_STRUCT_SIZE  = 136 # sizeof(nodeInfo_t)
 
 console = Console()
 
-def crc16_ccitt(data: bytes):
-    # Standard CRC-16-CCITT (0x1021) matching ESP32 rom/crc.h crc16_be.
-    # Initial: 0xFFFF, Poly: 0x1021
-    crc = 0xFFFF
+def crc16_ccitt(data: bytes, initial=0xFFFF):
+    """
+    Standard CRC-16-CCITT (0x1021) matching ESP32 rom/crc.h crc16_be.
+    Initial: 0xFFFF, Poly: 0x1021
+    """
+    crc = initial
     for byte in data:
         crc ^= (byte << 8)
         for _ in range(8):
@@ -67,19 +67,11 @@ class LogBuffer:
         with self.lock:
             return list(self.lines)[-n:]
 
-    def write_to_file(self, path: str):
-        with self.lock:
-            try:
-                with open(path, "a", encoding="utf-8") as f:
-                    for line in self.lines:
-                        f.write(line + "\n")
-            except Exception:
-                pass
-
 class CANState:
-    def __init__(self):
+    def __init__(self, logger):
         self.nodes = {}
         self.lock = threading.Lock()
+        self.logger = logger
 
     def touch(self, node_id: int):
         with self.lock:
@@ -93,9 +85,9 @@ class CANState:
             return nd
 
     def calculate_node_crc(self, node_id: int):
-        # Reconstructs the nodeInfo_t structure (136 bytes total).
-        # subModule_t: 16 bytes (15 data + 1 padding)
-        # node metadata: 8 bytes
+        """
+        Reconstructs the nodeInfo_t structure (136 bytes total).
+        """
         nd = self.nodes[node_id]
         buf = bytearray(NODEINFO_STRUCT_SIZE) 
         
@@ -104,41 +96,38 @@ class CANState:
             offset = i * SUBMODULE_STRUCT_SIZE
             if i in nd['subs']:
                 s = nd['subs'][i]
-                
-                # [0:3] config.rawConfig
+                # [0:2] config personality (3 bytes)
                 if s['cfg']:
                     buf[offset:offset+3] = s['cfg']
-                
-                # [3] explicit reserved byte
+                # [3] reserved byte (explicit padding)
                 buf[offset+3] = 0x00
-                
-                # [4:8] data union (4 bytes) - assumed 0 during initialization/CRC
-                # [8:10] introMsgId (Little Endian for ESP32 RAM)
+                # [4:7] data union (operational data, assumed 0 for config CRC)
+                # [8:9] introMsgId (Little Endian uint16)
                 struct.pack_into('<H', buf, offset + 8, s['intro_id'])
-                
-                # [10:12] dataMsgId
+                # [10:11] dataMsgId (Little Endian uint16)
                 if s['telemetry']:
                     struct.pack_into('<H', buf, offset + 10, s['telemetry']['id'])
-                    # [12] introMsgDLC (Assuming 8 per node defaults)
-                    buf[offset + 12] = 8 
+                    # [12] introMsgDLC
+                    buf[offset + 12] = 8 # Default
                     # [13] dataMsgDLC
                     buf[offset + 13] = s['telemetry']['dlc']
                     # [14] saveState
                     buf[offset + 14] = 1 if s['telemetry']['save'] else 0
-                
-                # [15] Tail padding byte to align next struct on 16-bit boundary
+                # [15] Tail padding for 16-byte alignment
                 buf[offset + 15] = 0x00
 
-        # 2. Pack Node Metadata at end of struct (starts at byte 128)
-        # uint32_t nodeID
-        struct.pack_into('<I', buf, 128, node_id)
-        # uint16_t nodeTypeMsg
-        struct.pack_into('<H', buf, 132, nd['node_type_msg'])
-        # uint8_t nodeTypeDLC
-        buf[134] = 8 # Default DLC for introduction frames
-        # uint8_t subModCnt
-        buf[135] = nd['sub_mod_cnt']
-        
+        # 2. Pack Node Metadata (starts at byte 128)
+        struct.pack_into('<I', buf, 128, node_id)           # nodeID (uint32_t)
+        struct.pack_into('<H', buf, 132, nd['node_type_msg']) # nodeTypeMsg (uint16_t)
+        buf[134] = 8                                        # nodeTypeDLC
+        buf[135] = nd['sub_mod_cnt']                        # subModCnt
+
+        # Save dump for debugging
+        dump_name = f"node_{node_id:08X}_dump.bin"
+        with open(dump_name, "wb") as f:
+            f.write(buf)
+        self.logger.add(f"Memory dump saved: {dump_name}")
+
         nd['mem_size'] = len(buf)
         return crc16_ccitt(buf)
 
@@ -153,19 +142,17 @@ class CANState:
                 
                 crc_status = ""
                 if nd['interview_complete']:
-                    size_info = f"({nd['mem_size']} bytes)"
+                    sz = f"({nd['mem_size']}B)"
                     if nd['calculated_crc'] == nd['reported_crc']:
-                        crc_status = f"[green]MATCH 0x{nd['calculated_crc']:04X} {size_info}[/]"
+                        crc_status = f"[green]MATCH 0x{nd['calculated_crc']:04X} {sz}[/]"
                     else:
-                        crc_status = f"[red]FAIL C:0x{nd['calculated_crc']:04X} R:0x{nd['reported_crc']:04X} {size_info}[/]"
+                        crc_status = f"[red]FAIL C:0x{nd['calculated_crc']:04X} R:0x{nd['reported_crc']:04X} {sz}[/]"
 
                 data.append({
                     'id': node_id,
-                    'hb': nd['heartbeat'].strftime('%H:%M:%S') if nd['heartbeat'] else "-",
                     'age': age,
                     'knob': nd['knob'] if nd['knob'] is not None else "-",
                     'temp': nd['temp'] if nd['temp'] is not None else "-",
-                    'complete': nd['interview_complete'],
                     'crc_str': crc_status,
                     'subs_text': f"{len(nd['subs'])}/{nd['sub_mod_cnt']} mods"
                 })
@@ -175,9 +162,9 @@ class App:
     def __init__(self, bus, iface):
         self.bus = bus
         self.iface = iface
-        self.state = CANState()
-        self.q = queue.Queue()
         self.log = LogBuffer()
+        self.state = CANState(self.log)
+        self.q = queue.Queue()
         self.stop_event = threading.Event()
         self.reader_thread = threading.Thread(target=self._reader_loop, daemon=True)
         self.is_windows = (platform.system().lower() == "windows")
@@ -195,7 +182,7 @@ class App:
             arb_id = msg.arbitration_id
             dlc = len(msg.data)
 
-            # Telemetry Parsing
+            # Standard Telemetry
             if arb_id == KNOB_ID and dlc >= 6:
                 node_id, val = struct.unpack('>IH', msg.data[:6])
                 self.state.touch(node_id)['knob'] = val
@@ -206,22 +193,20 @@ class App:
             # Interview Sequence (0x700-0x7FF)
             elif 0x700 <= arb_id <= 0x7FF:
                 if dlc < 4: continue
+                # Parse Node ID from Data Payload (Big Endian over wire)
                 node_id = struct.unpack('>I', msg.data[0:4])[0]
                 node = self.state.touch(node_id)
 
-                if node['interview_complete']:
-                    continue 
+                if node['interview_complete']: continue 
 
-                # Case 1: Identity Frame (msgPtr 0)
-                if node['sub_mod_cnt'] == 0:
+                if node['sub_mod_cnt'] == 0: # Frame 0: Identity
                     if dlc >= 7:
                         node['node_type_msg'] = arb_id
                         node['sub_mod_cnt'] = msg.data[4]
                         node['reported_crc'] = (msg.data[5] << 8) | msg.data[6]
-                        self.log.add(f"Detected Node 0x{node_id:08X}")
+                        self.log.add(f"Interviewing Node 0x{node_id:08X}...")
                     else: continue
-                # Case 2: Sub-module Frames (msgPtr > 0)
-                else:
+                else: # Frame 1+: Submodules
                     if dlc >= 5:
                         m_byte = msg.data[4]
                         idx, is_b = m_byte & 0x7F, bool(m_byte & 0x80)
@@ -240,20 +225,16 @@ class App:
                             if (idx + 1) >= node['sub_mod_cnt']:
                                 node['interview_complete'] = True
                                 node['calculated_crc'] = self.state.calculate_node_crc(node_id)
-                                self.log.add(f"Verified 0x{node_id:08X} ({node['mem_size']} bytes)")
+                                self.log.add(f"Completed Node 0x{node_id:08X}")
                 
-                self._send_ack(node_id)
-
-    def _send_ack(self, node_id):
-        payload = struct.pack('>I', node_id)
-        msg = can.Message(arbitration_id=ACK_INTRO_ID, data=payload, is_extended_id=False)
-        try: self.bus.send(msg)
-        except Exception: pass
+                # Acknowledge the frame
+                ack = can.Message(arbitration_id=ACK_INTRO_ID, data=struct.pack('>I', node_id))
+                self.bus.send(ack)
 
     def request_broadcast(self):
-        msg = can.Message(arbitration_id=REQ_NODE_INTRO_ID, data=[0]*4, is_extended_id=False)
+        msg = can.Message(arbitration_id=REQ_NODE_INTRO_ID, data=[0]*4)
         self.bus.send(msg)
-        self.log.add("Discovery Requested (0x401)")
+        self.log.add("Broadcast Discovery Sent (0x401)")
 
     def _build_layout(self):
         layout = Layout()
@@ -281,9 +262,9 @@ class App:
 
     def run(self):
         self.reader_thread.start()
-        time.sleep(0.1)
+        time.sleep(0.5)
         self.request_broadcast()
-
+        
         if not self.is_windows and sys.stdin.isatty():
             import termios, tty
             orig_settings = termios.tcgetattr(sys.stdin)
