@@ -23,6 +23,7 @@ except ImportError:
 # --- Message IDs ---
 ACK_INTRO_ID         = 0x400
 REQ_NODE_INTRO_ID    = 0x401
+CFG_ERASE_NVS_ID     = 0x41B  # Updated to 0x41B per user request
 CFG_REBOOT_ID        = 0x41C
 CFG_WRITE_NVS_ID     = 0x41D
 DATA_CONFIG_CRC_ID   = 0x526  
@@ -40,7 +41,7 @@ CFG_MAP = {
 SUBMODULE_STRUCT_SIZE = 16
 NODEINFO_STRUCT_SIZE  = 136
 NVS_TIMEOUT_SECONDS   = 5
-EMPTY_CONFIG_CRC      = 0xFFFF # Sentinel value indicating uninitialized NVS
+EMPTY_CONFIG_CRC      = 0xFFFF 
 
 def crc16_ccitt(data: bytes, initial=0xFFFF):
     crc = initial
@@ -216,6 +217,33 @@ class App:
         self._setup_terminal()
         self.interaction_active = False
 
+    def erase_selected(self):
+        self.interaction_active = True
+        node_ids = sorted(self.state.nodes.keys())
+        if not node_ids: return
+        target_id = node_ids[self.selected_idx % len(node_ids)]
+
+        self._restore_terminal()
+        print(f"\n[WARNING] ERASE NVS on Node 0x{target_id:08X}")
+        confirm = input(f"This will wipe NVS and trigger a remote REBOOT. Proceed? (y/n): ").lower()
+        if confirm == 'y':
+            # Send Erase Command (0x41B)
+            self.bus.send(can.Message(arbitration_id=CFG_ERASE_NVS_ID, data=struct.pack('>I', target_id)))
+            self.add_log("Sent NVS Erase & Reboot Command", target_id)
+            
+            # Reset local tracking so Master re-interviews upon node reboot
+            with self.state.lock:
+                n = self.state.nodes[target_id]
+                n['interview_complete'] = False
+                n['sub_mod_cnt'] = 0
+                n['subs'] = {}
+                n['nvs_status'] = "Erasing..."
+        else:
+            self.add_log("Erase cancelled.")
+        
+        self._setup_terminal()
+        self.interaction_active = False
+
     def _build_layout(self):
         node_ids = sorted(self.state.nodes.keys())
         target_id_val = node_ids[self.selected_idx % len(node_ids)] if node_ids else None
@@ -248,7 +276,6 @@ class App:
             sum_color = "cyan" if (self.filter_enabled and is_sel) else "dim"
             mod_summary = [f"M{k}:[{sum_color}]{CFG_MAP.get(s['intro_id'], f'0x{s['intro_id']:03X}')}[/]" for k, s in sorted(n['subs'].items())]
             
-            # Logic for NEEDS CONFIG or MATCH/MODIFIED
             if n['reported_crc'] == EMPTY_CONFIG_CRC:
                 crc_str = "[bold red]NEEDS CONFIG[/]"
             elif n['interview_complete'] and n['calculated_crc'] == n['reported_crc']:
@@ -260,7 +287,7 @@ class App:
 
         l = Layout()
         l.split(
-            Layout(Text(f" CAN Master | Arrows: Select | (e)dit | (p)ersist | (f)ilter | (b)roadcast | (q)uit   {filter_status}", style="bold reverse blue"), size=1),
+            Layout(Text(f" CAN Master | Arrows: Select | (e)dit | (p)ersist | e(x)punge | (f)ilter | (b)roadcast | (q)uit   {filter_status}", style="bold reverse blue"), size=1),
             Layout(table, name="body"),
             Layout(Panel(Text("\n".join(display_logs)), title="System Log", border_style="cyan"), size=10)
         )
@@ -288,6 +315,8 @@ class App:
                             self.bus.send(can.Message(arbitration_id=REQ_NODE_INTRO_ID, data=[0]*4))
                         elif key == 'p':
                             live.stop(); self.persist_selected(); live.start()
+                        elif key == 'x':
+                            live.stop(); self.erase_selected(); live.start()
                         elif key == 'e':
                             live.stop(); self.edit_module(); live.start()
                         live.update(self._build_layout())
