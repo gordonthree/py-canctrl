@@ -32,10 +32,9 @@ DATA_CFGWRITE_FAILED = 0x528
 # Friendly Names for Hardware and Config IDs
 CFG_MAP = {
     0x41F: "Blink Out", 0x420: "Anlg Strip", 0x421: "ARGB Strip",
-    0x43B: "Digi In",   0x43C: "Digi Out",   0x43D: "Anlg In",
     0x43E: "Anlg Out",  0x43F: "PWM Out",    0x70A: "AnaBkLt",
     0x701: "ARGBW",     0x702: "ARGB",       0x711: "DigIN",
-    0x70B: "LcdTouch"
+    0x70B: "LcdTouch",  0x744: "Digi Out"
 }
 
 SUBMODULE_STRUCT_SIZE = 16
