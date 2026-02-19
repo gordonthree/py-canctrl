@@ -23,9 +23,9 @@ except ImportError:
 # --- Message IDs ---
 ACK_INTRO_ID         = 0x400
 REQ_NODE_INTRO_ID    = 0x401
-CFG_ERASE_NVS_ID     = 0x41B  # Updated to 0x41B per user request
-CFG_REBOOT_ID        = 0x41C
-CFG_WRITE_NVS_ID     = 0x41D
+CFG_ERASE_NVS_ID     = 0x434  # Updated to 0x434 in latest version of canbus_msg.h
+CFG_REBOOT_ID        = 0x435  # Updated to 0x435 in latest version of canbus_msg.h
+CFG_WRITE_NVS_ID     = 0x436  # Updated to 0x436 in latest version of canbus_msg.h
 DATA_CONFIG_CRC_ID   = 0x526  
 DATA_CFGWRITE_FAILED = 0x528  
 
