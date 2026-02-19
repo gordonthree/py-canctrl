@@ -403,38 +403,115 @@ BO_ 1048 REQ_IMU_SENSORS: 4 Vector__XXX
 BO_ 1049 REQ_RESERVED_419: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1050 CFG_RESERVED_41A: 4 Vector__XXX
+BO_ 1050 REQ_RESERVED_41A: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1051 CFG_RESERVED_41B: 4 Vector__XXX
+BO_ 1051 REQ_RESERVED_41B: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1052 CFG_REBOOT: 4 Vector__XXX
+BO_ 1052 REQ_RESERVED_41C: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1053 CFG_WRITE_NVS: 6 Vector__XXX
+BO_ 1053 REQ_RESERVED_41D: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1054 REQ_RESERVED_41E: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1055 REQ_RESERVED_41F: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1056 CFG_RESERVED_420: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1057 CFG_RESERVED_421: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1058 CFG_RESERVED_422: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1059 CFG_RESERVED_423: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1060 CFG_RESERVED_424: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1061 CFG_RESERVED_425: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1062 CFG_RESERVED_426: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1063 CFG_RESERVED_427: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1064 CFG_RESERVED_428: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1065 CFG_RESERVED_429: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1066 CFG_RESERVED_42A: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1067 CFG_RESERVED_42B: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1068 CFG_RESERVED_42C: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1069 CFG_RESERVED_42D: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1070 COLORPICKER_READ_NVS: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1071 COLORPICKER_WRITE_NVS: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1072 COLORPICKER_SEND_LIST: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1073 COLORPICKER_PURGE_LIST: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1074 COLORPICKER_DEL_NODE: 8 Vector__XXX
+ SG_ remote_id : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1075 COLORPICKER_ADD_NODE: 8 Vector__XXX
+ SG_ remote_id : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1076 CFG_ERASE_NVS: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1077 CFG_REBOOT: 4 Vector__XXX
+ SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1078 CFG_WRITE_NVS: 6 Vector__XXX
  SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1054 CFG_READ_NVS: 6 Vector__XXX
+BO_ 1079 CFG_READ_NVS: 6 Vector__XXX
  SG_ crc_16 : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1055 CFG_BLINK_OUTPUT: 8 Vector__XXX
+BO_ 1080 CFG_BLINK_OUTPUT: 8 Vector__XXX
  SG_ is_inverted : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ strobe_pattern : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ blink_delay : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1056 CFG_ANALOG_STRIP: 8 Vector__XXX
+BO_ 1081 CFG_ANALOG_STRIP: 8 Vector__XXX
  SG_ reserved : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ pin_cfg_index : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ color_order : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ strip_number : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1057 CFG_ARGB_STRIP: 8 Vector__XXX
+BO_ 1082 CFG_ARGB_STRIP: 8 Vector__XXX
  SG_ output_pin : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ color_order : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ led_count : 39|16@0+ (1,0) [0|0] "" Vector__XXX
@@ -603,10 +680,10 @@ BO_ 1307 DATA_NODE_BOOT_TIMESTAMP: 8 Vector__XXX
 BO_ 1308 DATA_TOUCHSCREEN_EVENT: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1309 DATA_RESERVED_51D: 4 Vector__XXX
+BO_ 1309 COLORPICKER_LIST_MEMBER: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1310 DATA_RESERVED_51E: 4 Vector__XXX
+BO_ 1310 COLORPICKER_END_OF_LIST: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1311 DATA_RESERVED_51F: 4 Vector__XXX
@@ -727,7 +804,7 @@ BO_ 1792 DISP_ANALOG_LED_STRIP: 8 Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1793 DISP_ARGBW_LED_STRIP: 8 Vector__XXX
+BO_ 1793 DISP_ARGB_BUTTON_BACKLIGHT: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -769,7 +846,7 @@ BO_ 1798 DISP_RESERVED_706: 8 Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1799 DISP_LCD: 8 Vector__XXX
+BO_ 1799 DISP_NON_TOUCH_LCD: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -1196,21 +1273,21 @@ BO_ 1859 OUT_MECH_RELAY: 8 Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1860 OUT_RESERVED_744: 8 Vector__XXX
+BO_ 1860 OUT_GPIO_DIGITAL: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1861 OUT_RESERVED_745: 8 Vector__XXX
+BO_ 1861 OUT_GPIO_PWM: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1862 OUT_RESERVED_746: 8 Vector__XXX
+BO_ 1862 OUT_GPIO_DAC: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -1869,14 +1946,39 @@ CM_ BO_ 1046 "req analog inputs";
 CM_ BO_ 1047 "req ambient light sensors";
 CM_ BO_ 1048 "req imu sensors";
 CM_ BO_ 1049 "req reserved 419";
-CM_ BO_ 1050 "cfg reserved 41a";
-CM_ BO_ 1051 "cfg reserved 41b";
-CM_ BO_ 1052 "cfg reboot";
-CM_ BO_ 1053 "cfg write nvs";
-CM_ BO_ 1054 "cfg read nvs";
-CM_ BO_ 1055 "cfg blink output";
-CM_ BO_ 1056 "cfg analog strip";
-CM_ BO_ 1057 "cfg argb strip";
+CM_ BO_ 1050 "req reserved 41a";
+CM_ BO_ 1051 "req reserved 41b";
+CM_ BO_ 1052 "req reserved 41c";
+CM_ BO_ 1053 "req reserved 41d";
+CM_ BO_ 1054 "req reserved 41e";
+CM_ BO_ 1055 "req reserved 41f";
+CM_ BO_ 1056 "cfg reserved 420";
+CM_ BO_ 1057 "cfg reserved 421";
+CM_ BO_ 1058 "cfg reserved 422";
+CM_ BO_ 1059 "cfg reserved 423";
+CM_ BO_ 1060 "cfg reserved 424";
+CM_ BO_ 1061 "cfg reserved 425";
+CM_ BO_ 1062 "cfg reserved 426";
+CM_ BO_ 1063 "cfg reserved 427";
+CM_ BO_ 1064 "cfg reserved 428";
+CM_ BO_ 1065 "cfg reserved 429";
+CM_ BO_ 1066 "cfg reserved 42a";
+CM_ BO_ 1067 "cfg reserved 42b";
+CM_ BO_ 1068 "cfg reserved 42c";
+CM_ BO_ 1069 "cfg reserved 42d";
+CM_ BO_ 1070 "colorpicker read nvs";
+CM_ BO_ 1071 "colorpicker write nvs";
+CM_ BO_ 1072 "colorpicker send list";
+CM_ BO_ 1073 "colorpicker purge list";
+CM_ BO_ 1074 "colorpicker del node";
+CM_ BO_ 1075 "colorpicker add node";
+CM_ BO_ 1076 "erase nvs";
+CM_ BO_ 1077 "reboot";
+CM_ BO_ 1078 "write nvs";
+CM_ BO_ 1079 "read nvs";
+CM_ BO_ 1080 "cfg blink output";
+CM_ BO_ 1081 "cfg analog strip";
+CM_ BO_ 1082 "cfg argb strip";
 CM_ BO_ 1083 "cfg digital input";
 CM_ BO_ 1084 "cfg digital output";
 CM_ BO_ 1085 "cfg analog input";
@@ -1911,8 +2013,8 @@ CM_ BO_ 1305 "data reserved 519";
 CM_ BO_ 1306 "node cpu temp";
 CM_ BO_ 1307 "node boot timestamp";
 CM_ BO_ 1308 "data touchscreen event";
-CM_ BO_ 1309 "data reserved 51d";
-CM_ BO_ 1310 "data reserved 51e";
+CM_ BO_ 1309 "colorpicker list member";
+CM_ BO_ 1310 "colorpicker end of list";
 CM_ BO_ 1311 "data reserved 51f";
 CM_ BO_ 1312 "display off";
 CM_ BO_ 1313 "display on";
@@ -1947,13 +2049,13 @@ CM_ BO_ 1341 "0x53D reserved private msg for 64-bit sensor data";
 CM_ BO_ 1342 "0x53E reserved private msg for 64-bit sensor data";
 CM_ BO_ 1343 "0x53F reserved private msg for 64-bit sensor data";
 CM_ BO_ 1792 "analog led strip";
-CM_ BO_ 1793 "argbw led strip";
+CM_ BO_ 1793 "argb button backlight";
 CM_ BO_ 1794 "argb led strip";
-CM_ BO_ 1795 "disp strobe module";
+CM_ BO_ 1795 "strobe module";
 CM_ BO_ 1796 "disp reserved 704";
 CM_ BO_ 1797 "non-touch oled display";
 CM_ BO_ 1798 "disp reserved 706";
-CM_ BO_ 1799 "non-touch lcd display";
+CM_ BO_ 1799 "non touch lcd";
 CM_ BO_ 1800 "disp no backlight";
 CM_ BO_ 1801 "disp argb backlight";
 CM_ BO_ 1802 "disp analog backlight";
@@ -2014,9 +2116,9 @@ CM_ BO_ 1856 "high current solid state switch";
 CM_ BO_ 1857 "low current solid state switch";
 CM_ BO_ 1858 "open drain output";
 CM_ BO_ 1859 "mechanical relay";
-CM_ BO_ 1860 "out reserved 744";
-CM_ BO_ 1861 "out reserved 745";
-CM_ BO_ 1862 "out reserved 746";
+CM_ BO_ 1860 "gpio digital";
+CM_ BO_ 1861 "gpio pwm";
+CM_ BO_ 1862 "gpio dac";
 CM_ BO_ 1863 "out reserved 747";
 CM_ BO_ 1864 "out reserved 748";
 CM_ BO_ 1865 "out reserved 749";
