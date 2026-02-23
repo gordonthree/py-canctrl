@@ -448,19 +448,29 @@ BO_ 1063 CFG_RESERVED_427: 4 Vector__XXX
 BO_ 1064 CFG_RESERVED_428: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1065 CFG_RESERVED_429: 4 Vector__XXX
+BO_ 1065 CFG_SUB_RAW_DATA: 4 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1066 CFG_RESERVED_42A: 4 Vector__XXX
+BO_ 1066 CFG_NODE_DATA_MSG: 7 Vector__XXX
+ SG_ datamsg_dlc : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ datamsg_id : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1067 CFG_RESERVED_42B: 4 Vector__XXX
+BO_ 1067 CFG_NODE_INTRO_MSG: 7 Vector__XXX
+ SG_ intromsg_dlc : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ intromsg_id : 39|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1068 CFG_RESERVED_42C: 4 Vector__XXX
+BO_ 1068 CFG_SUB_DATA_MSG: 8 Vector__XXX
+ SG_ datamsg_dlc : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ datamsg_id : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sub_module : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1069 CFG_RESERVED_42D: 4 Vector__XXX
+BO_ 1069 CFG_SUB_INTRO_MSG: 8 Vector__XXX
+ SG_ intromsg_dlc : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ intromsg_id : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ sub_module : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1070 COLORPICKER_READ_NVS: 4 Vector__XXX
@@ -512,9 +522,9 @@ BO_ 1081 CFG_ANALOG_STRIP: 8 Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1082 CFG_ARGB_STRIP: 8 Vector__XXX
- SG_ output_pin : 63|8@0+ (1,0) [0|0] "" Vector__XXX
- SG_ color_order : 55|8@0+ (1,0) [0|0] "" Vector__XXX
- SG_ led_count : 39|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ color_order : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ led_count : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_pin : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1083 CFG_DIGITAL_INPUT: 8 Vector__XXX
@@ -624,8 +634,8 @@ BO_ 1294 DATA_EXTERNAL_VOLTS: 8 Vector__XXX
  SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1295 DATA_DATA_RESERVED_50F: 8 Vector__XXX
- SG_ sensor_data : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+BO_ 1295 DATA_ADC_RAW: 7 Vector__XXX
+ SG_ sensor_data : 47|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ sensor_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
@@ -881,7 +891,7 @@ BO_ 1803 DISP_TOUCHSCREEN_LCD: 8 Vector__XXX
  SG_ submodule_id : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ node_id : 7|32@0+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1804 DISP_RESERVED_70C: 8 Vector__XXX
+BO_ 1804 DISP_MONOCHROME_LED: 8 Vector__XXX
  SG_ config_2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_1 : 55|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ config_0 : 47|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -1961,11 +1971,11 @@ CM_ BO_ 1061 "cfg reserved 425";
 CM_ BO_ 1062 "cfg reserved 426";
 CM_ BO_ 1063 "cfg reserved 427";
 CM_ BO_ 1064 "cfg reserved 428";
-CM_ BO_ 1065 "cfg reserved 429";
-CM_ BO_ 1066 "cfg reserved 42a";
-CM_ BO_ 1067 "cfg reserved 42b";
-CM_ BO_ 1068 "cfg reserved 42c";
-CM_ BO_ 1069 "cfg reserved 42d";
+CM_ BO_ 1065 "cfg sub raw data";
+CM_ BO_ 1066 "node data msg";
+CM_ BO_ 1067 "node intro msg";
+CM_ BO_ 1068 "sub data msg";
+CM_ BO_ 1069 "sub intro msg";
 CM_ BO_ 1070 "colorpicker read nvs";
 CM_ BO_ 1071 "colorpicker write nvs";
 CM_ BO_ 1072 "colorpicker send list";
@@ -1999,7 +2009,7 @@ CM_ BO_ 1291 "internal pcb volts";
 CM_ BO_ 1292 "internal pcb current";
 CM_ BO_ 1293 "external temperature";
 CM_ BO_ 1294 "external volts";
-CM_ BO_ 1295 "data reserved 50f";
+CM_ BO_ 1295 "adc raw";
 CM_ BO_ 1296 "ambient light USE PRIV MSG";
 CM_ BO_ 1297 "IMU X Axis USE PRIV MSG";
 CM_ BO_ 1298 "IMU Y Axis USE PRIV MSG";
@@ -2060,7 +2070,7 @@ CM_ BO_ 1800 "disp no backlight";
 CM_ BO_ 1801 "disp argb backlight";
 CM_ BO_ 1802 "disp analog backlight";
 CM_ BO_ 1803 "disp touchscreen lcd";
-CM_ BO_ 1804 "disp reserved 70c";
+CM_ BO_ 1804 "monochrome led";
 CM_ BO_ 1805 "disp reserved 70d";
 CM_ BO_ 1806 "disp reserved 70e";
 CM_ BO_ 1807 "disp reserved 70f";

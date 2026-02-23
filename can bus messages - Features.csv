@@ -1,0 +1,144 @@
+,,,,,,,,,,,,,,,,,,,,
+box feature mask builder,,,,,,,,,,,,,,,,,,,,
+"node
+type","serial
+number",inputs,,,"sensor
+cpu temp","sensor
+board volt","sensor
+board current","outputs
+solid state",,,,"outputs
+relay or other",,,,reserved,"high
+byte","low
+byte","mask
+name",include in canbus_msg.h
+,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,,,,
+"6-gang switch box, 4 high, 2 low",1,0,0,0,1,1,1,0,1,1,0,0,0,0,0,0,0x8E,0xC0,FEATURE_BOX_SW_6GANG_HIGH,"#define FEATURE_BOX_SW_6GANG_HIGH (0x8EC0)     /** feature mask for 6-gang switch box, 4 high, 2 low */"
+"3-gang output, 2 high, 1 low",1,0,0,0,1,1,1,0,0,1,1,0,0,0,0,0,0x8E,0x60,FEATURE_BOX_SW_3GANG,"#define FEATURE_BOX_SW_3GANG (0x8E60)     /** feature mask for 3-gang output, 2 high, 1 low */"
+"2-gang switch box, 2 low",1,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0x8E,0x40,FEATURE_BOX_SW_2GANG_LOW,"#define FEATURE_BOX_SW_2GANG_LOW (0x8E40)     /** feature mask for 2-gang switch box, 2 low */"
+"4-gang switch box, 2 high, 2 low",1,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0x8E,0x80,FEATURE_BOX_SW_4GANG,"#define FEATURE_BOX_SW_4GANG (0x8E80)     /** feature mask for 4-gang switch box, 2 high, 2 low */"
+4-gang relay output box,1,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0x8C,0x08,FEATURE_BOX_SW_4RELAY,#define FEATURE_BOX_SW_4RELAY (0x8C08)     /** feature mask for 4-gang relay output box */
+"6-gang switch box, 2 high, 4 low",1,0,0,0,1,1,1,0,1,1,0,0,0,0,0,0,0x8E,0xC0,FEATURE_BOX_SW_6GANG_LOW,"#define FEATURE_BOX_SW_6GANG_LOW (0x8EC0)     /** feature mask for 6-gang switch box, 2 high, 4 low */"
+"2-gang switch box, 2 high",1,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0x8E,0x40,FEATURE_BOX_SW_2GANG_HIGH,"#define FEATURE_BOX_SW_2GANG_HIGH (0x8E40)     /** feature mask for 2-gang switch box, 2 high */"
+8-gang relay output box,1,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0x8C,0x10,FEATURE_BOX_SW_8RELAY,#define FEATURE_BOX_SW_8RELAY (0x8C10)     /** feature mask for 8-gang relay output box */
+"input - output box, 4 in, 4 out",1,1,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0xCC,0x08,FEATURE_BOX_MULTI_4X4IO,"#define FEATURE_BOX_MULTI_4X4IO (0xCC08)     /** feature mask for input - output box, 4 in, 4 out */"
+4-digital multi temp input box,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0xCC,0x00,FEATURE_BOX_MULTI_4XTEMP,#define FEATURE_BOX_MULTI_4XTEMP (0xCC00)     /** feature mask for 4-digital multi temp input box */
+"temp, volt, current input box",1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0xBC,0x00,FEATURE_BOX_MULTI_TVA,"#define FEATURE_BOX_MULTI_TVA (0xBC00)     /** feature mask for temp, volt, current input box */"
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+interface and display feature mask builder,,,,,,,,,,,,,,,,,,,,
+"node
+type","serial
+number",inputs,,,,,,"sensor
+cpu temp","sensor
+board volt","display
+type",,"display
+has touch","display
+backlight","led
+addr","led
+analog",reserved,"high
+byte","low
+byte",,
+8x4 argb keypad,1,1,0,0,0,0,0,1,1,0,1,0,0,1,0,0,0xC1,0xA4,FEATURE_IFACE_8X4_ARGB,#define FEATURE_IFACE_8X4_ARGB (0xC1A4)     /** feature mask for 8x4 argb keypad */
+4x4 argb keypad,1,0,1,0,0,0,0,1,1,0,1,0,0,1,0,0,0xA1,0xA4,FEATURE_IFACE_4X4_ARGB,#define FEATURE_IFACE_4X4_ARGB (0xA1A4)     /** feature mask for 4x4 argb keypad */
+touchscreen type a,1,0,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0x81,0xD8,FEATURE_IFACE_TOUCHSCREEN_TYPE_A,#define FEATURE_IFACE_TOUCHSCREEN_TYPE_A (0x81D8)     /** feature mask for touchscreen type a */
+touchscreen type b,1,0,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0x81,0xD8,FEATURE_IFACE_TOUCHSCREEN_TYPE_B,#define FEATURE_IFACE_TOUCHSCREEN_TYPE_B (0x81D8)     /** feature mask for touchscreen type b */
+nextion type a,1,0,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0x81,0xD8,FEATURE_IFACE_NEXTION_TYPE_A,#define FEATURE_IFACE_NEXTION_TYPE_A (0x81D8)     /** feature mask for nextion type a */
+nextion type b,1,0,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0x81,0xD8,FEATURE_IFACE_NEXTION_TYPE_B,#define FEATURE_IFACE_NEXTION_TYPE_B (0x81D8)     /** feature mask for nextion type b */
+6-axis IMU,1,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0x91,0x80,FEATURE_IFACE_6_AXIS_IMU,#define FEATURE_IFACE_6_AXIS_IMU (0x9180)     /** feature mask for 6-axis IMU */
+3x5 button box,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0x9F,0x80,FEATURE_IFACE_3X5_BUTTON_BOX,#define FEATURE_IFACE_3X5_BUTTON_BOX (0x9F80)     /** feature mask for 3x5 button box */
+4x6 button box,1,0,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0xB1,0x80,FEATURE_IFACE_4x6_BUTTON_BOX,#define FEATURE_IFACE_4x6_BUTTON_BOX (0xB180)     /** feature mask for 4x6 button box */
+analog led strip,1,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0,0x81,0xE2,FEATURE_DISP_ANALOG_LED_STRIP,#define FEATURE_DISP_ANALOG_LED_STRIP (0x81E2)     /** feature mask for analog led strip */
+argbw led strip,1,0,0,0,0,0,0,1,1,1,1,0,0,1,0,0,0x81,0xE4,FEATURE_DISP_ARGBW_LED_STRIP,#define FEATURE_DISP_ARGBW_LED_STRIP (0x81E4)     /** feature mask for argbw led strip */
+argb led strip,1,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0x80,0x64,FEATURE_DISP_ARGB_LED_STRIP,#define FEATURE_DISP_ARGB_LED_STRIP (0x8064)     /** feature mask for argb led strip */
+non-touch oled display,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0x80,0x40,FEATURE_DISP_OLED,#define FEATURE_DISP_OLED (0x8040)     /** feature mask for non-touch oled display */
+non-touch lcd display,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0x80,0x48,FEATURE_DISP_LCD,#define FEATURE_DISP_LCD (0x8048)     /** feature mask for non-touch lcd display */
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+button feature mask builder,,,,,,,,,,,,,,,,,,,,
+"button
+type",reserved,reserved,,,,reserved,,reserved,,"analog
+input","has
+display","has
+touch","addr
+backlight","analog
+backlight","has
+click",virtual,"high
+byte","low
+byte",,
+input digital temp,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_INPUT_DIGITAL_TEMP,#define FEATURE_INPUT_DIGITAL_TEMP (0x0000)     /** feature mask for input digital temp */
+input k type temp,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0x00,0x08,FEATURE_INPUT_K_TYPE_TEMP,#define FEATURE_INPUT_K_TYPE_TEMP (0x0008)     /** feature mask for input k type temp */
+last boot timestamp,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0x00,0x04,FEATURE_NODE_LASTBOOT,#define FEATURE_NODE_LASTBOOT (0x0004)     /** feature mask for last boot timestamp */
+node pcb temp,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0x00,0x11,FEATURE_NODE_PCB_TEMP,#define FEATURE_NODE_PCB_TEMP (0x0011)     /** feature mask for node pcb temp */
+node cpu temp,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0x00,0x20,FEATURE_NODE_CPU_TEMP,#define FEATURE_NODE_CPU_TEMP (0x0020)     /** feature mask for node cpu temp */
+input ext voltage sensor,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0x00,0x40,FEATURE_INPUT_EXT_VOLTAGE_SENSOR,#define FEATURE_INPUT_EXT_VOLTAGE_SENSOR (0x0040)     /** feature mask for input ext voltage sensor */
+node int voltage sensor,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0x00,0x42,FEATURE_NODE_INT_VOLTAGE_SENSOR,#define FEATURE_NODE_INT_VOLTAGE_SENSOR (0x0042)     /** feature mask for node int voltage sensor */
+node int current sensor,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_NODE_INT_CURRENT_SENSOR,#define FEATURE_NODE_INT_CURRENT_SENSOR (0x0000)     /** feature mask for node int current sensor */
+input ext current shunt,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_INPUT_EXT_CURRENT_SHUNT,#define FEATURE_INPUT_EXT_CURRENT_SHUNT (0x0000)     /** feature mask for input ext current shunt */
+input ext current hall,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0x00,0x10,FEATURE_INPUT_EXT_CURRENT_HALL,#define FEATURE_INPUT_EXT_CURRENT_HALL (0x0010)     /** feature mask for input ext current hall */
+sensor reserved 72a,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0x00,0x44,FEATURE_SENSOR_RESERVED_72A,#define FEATURE_SENSOR_RESERVED_72A (0x0044)     /** feature mask for sensor reserved 72a */
+sensor reserved 72b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_SENSOR_RESERVED_72B,#define FEATURE_SENSOR_RESERVED_72B (0x0000)     /** feature mask for sensor reserved 72b */
+GPS altitude,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_GPS_ALTITUDE,#define FEATURE_GPS_ALTITUDE (0x0000)     /** feature mask for GPS altitude */
+GPS status,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_GPS_STATUS,#define FEATURE_GPS_STATUS (0x0000)     /** feature mask for GPS status */
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+sensor feature mask builder,,,,,,,,,,,,,,,,,,,,
+"sensor
+type",reserved,reserved,,,,"light
+sensor","IMU
+sensor","GPS
+sensor",reserved,"temp
+digital","temp
+k-type","temp
+internal","voltage
+ext","voltage
+int","current
+ext","current
+int","high
+byte","low
+byte",,
+sensor reserved 72e,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0x00,0x40,FEATURE_SENSOR_RESERVED_72E,#define FEATURE_SENSOR_RESERVED_72E (0x0040)     /** feature mask for sensor reserved 72e */
+sensor reserved 72f,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0x00,0x20,FEATURE_SENSOR_RESERVED_72F,#define FEATURE_SENSOR_RESERVED_72F (0x0020)     /** feature mask for sensor reserved 72f */
+IMU X Axis sensor,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,FEATURE_IMU_X_AXIS_SENSOR,#define FEATURE_IMU_X_AXIS_SENSOR (0x0000)     /** feature mask for IMU X Axis sensor */
+IMU Y Axis sensor,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0x00,0x11,FEATURE_IMU_Y_AXIS_SENSOR,#define FEATURE_IMU_Y_AXIS_SENSOR (0x0011)     /** feature mask for IMU Y Axis sensor */
+IMU Z Axis sensor,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0x00,0x10,FEATURE_IMU_Z_AXIS_SENSOR,#define FEATURE_IMU_Z_AXIS_SENSOR (0x0010)     /** feature mask for IMU Z Axis sensor */
+IMU X Gyro sensor,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0x00,0x08,FEATURE_IMU_X_GYRO_SENSOR,#define FEATURE_IMU_X_GYRO_SENSOR (0x0008)     /** feature mask for IMU X Gyro sensor */
+IMU Y Gyro sensor,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0x00,0x44,FEATURE_IMU_Y_GYRO_SENSOR,#define FEATURE_IMU_Y_GYRO_SENSOR (0x0044)     /** feature mask for IMU Y Gyro sensor */
+GPS utc time,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0x00,0x01,FEATURE_GPS_UTC_TIME,#define FEATURE_GPS_UTC_TIME (0x0001)     /** feature mask for GPS utc time */
+GPS latitude,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0x00,0x02,FEATURE_GPS_LATITUDE,#define FEATURE_GPS_LATITUDE (0x0002)     /** feature mask for GPS latitude */
+GPS NS IND,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0x00,0x02,FEATURE_GPS_NS_IND,#define FEATURE_GPS_NS_IND (0x0002)     /** feature mask for GPS NS IND */
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+low current solid state switch,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0x04,0x00,FEATURE_OUT_LOW_CURRENT_SW,#define FEATURE_OUT_LOW_CURRENT_SW (0x0400)     /** feature mask for low current solid state switch */
+open drain output,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_OPEN_DRAIN,#define FEATURE_OUT_OPEN_DRAIN (0x0200)     /** feature mask for open drain output */
+mechanical relay,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_MECH_RELAY,#define FEATURE_OUT_MECH_RELAY (0x0200)     /** feature mask for mechanical relay */
+out reserved 744,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_RESERVED_744,#define FEATURE_OUT_RESERVED_744 (0x0200)     /** feature mask for out reserved 744 */
+out reserved 745,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_RESERVED_745,#define FEATURE_OUT_RESERVED_745 (0x0200)     /** feature mask for out reserved 745 */
+out reserved 746,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_RESERVED_746,#define FEATURE_OUT_RESERVED_746 (0x0200)     /** feature mask for out reserved 746 */
+out reserved 747,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0x02,0x00,FEATURE_OUT_RESERVED_747,#define FEATURE_OUT_RESERVED_747 (0x0200)     /** feature mask for out reserved 747 */
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+out reserved 74b,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_OUT_RESERVED_74B,#define FEATURE_OUT_RESERVED_74B (0x0100)     /** feature mask for out reserved 74b */
+out reserved 74c,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_OUT_RESERVED_74C,#define FEATURE_OUT_RESERVED_74C (0x0100)     /** feature mask for out reserved 74c */
+out reserved 74d,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_OUT_RESERVED_74D,#define FEATURE_OUT_RESERVED_74D (0x0100)     /** feature mask for out reserved 74d */
+out reserved 74e,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_OUT_RESERVED_74E,#define FEATURE_OUT_RESERVED_74E (0x0100)     /** feature mask for out reserved 74e */
+out reserved 74f,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_OUT_RESERVED_74F,#define FEATURE_OUT_RESERVED_74F (0x0100)     /** feature mask for out reserved 74f */
+GPS longitude,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_GPS_LONGITUDE,#define FEATURE_GPS_LONGITUDE (0x0100)     /** feature mask for GPS longitude */
+GPS EW IND,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0x01,0x00,FEATURE_GPS_EW_IND,#define FEATURE_GPS_EW_IND (0x0100)     /** feature mask for GPS EW IND */
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,
+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0x00,0x00,,

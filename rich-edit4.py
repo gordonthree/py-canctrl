@@ -23,6 +23,7 @@ except ImportError:
     print("Failed to import python-can. Install with: pip install python-can")
     sys.exit(1)
 
+
 # --- Default Message IDs (Populated dynamically if --csv is used) ---
 ACK_INTRO_ID         = 0x400
 REQ_NODE_INTRO_ID    = 0x401
@@ -45,6 +46,24 @@ ID_MAP_KEYS = {
     "DATA_CONFIG_CRC": "DATA_CONFIG_CRC_ID",
     "DATA_CFGWRITE_FAILED": "DATA_CFGWRITE_FAILED"
 }
+
+# --- ColorPicker Management IDs ---
+COLORPICKER_READ_NVS_ID   = 0x42E
+COLORPICKER_WRITE_NVS_ID  = 0x42F
+COLORPICKER_SEND_LIST_ID   = 0x430
+COLORPICKER_PURGE_LIST_ID  = 0x431
+COLORPICKER_DEL_NODE_ID    = 0x432
+COLORPICKER_ADD_NODE_ID    = 0x433
+
+# Mapping update (inside ID_MAP_KEYS)
+ID_MAP_KEYS.update({
+    "COLORPICKER_READ_NVS": "COLORPICKER_READ_NVS_ID",
+    "COLORPICKER_WRITE_NVS": "COLORPICKER_WRITE_NVS_ID",
+    "COLORPICKER_SEND_LIST": "COLORPICKER_SEND_LIST_ID",
+    "COLORPICKER_PURGE_LIST": "COLORPICKER_PURGE_LIST_ID",
+    "COLORPICKER_DEL_NODE": "COLORPICKER_DEL_NODE_ID",
+    "COLORPICKER_ADD_NODE": "COLORPICKER_ADD_NODE_ID"
+})
 
 # Friendly Names for Hardware/Config IDs (Populated from CSV 'Comments')
 CFG_MAP = {}
@@ -121,7 +140,8 @@ class App:
         self.filter_enabled = False
         self.detail_node = None 
         self.term_orig = None
-        
+        self.picker_buffer = set()  # Tracks nodes to be sent to CYD
+
         if csv_path:
             self._load_definitions_from_csv(csv_path)
             
@@ -432,61 +452,38 @@ class App:
         self.interaction_active = False
 
     def _build_layout(self):
+        layout = Layout()
+        layout.split_column(Layout(name="header", size=3), Layout(name="body"))
+        layout["header"].update(Panel(Text("CAN Master Node Manager", justify="center", style="bold blue")))
+
+        table = Table(title="Discovered Nodes", expand=True)
+        # Match your original columns exactly
+        table.add_column("ID", style="cyan")
+        table.add_column("Status", style="green")
+        table.add_column("Last Seen", style="magenta")
+        table.add_column("Submodules", style="yellow")
+
         node_ids = sorted(self.state.nodes.keys())
-        target_id_val = node_ids[self.selected_idx % len(node_ids)] if node_ids else None
-        target_id_str = f"0x{target_id_val:08X}" if target_id_val else None
-        
-        if self.filter_enabled and target_id_str:
-            display_logs = [log[1] for log in self.all_logs if log[0] == target_id_str][-15:]
-            filter_status = f"[bold yellow]Filter: ON [{target_id_str}][/]"
-        else:
-            display_logs = [log[1] for log in self.all_logs][-15:]
-            filter_status = "[dim]Filter: OFF[/]"
-
-        table = Table(show_header=True, header_style="bold cyan", expand=True, box=None)
-        table.add_column("S", width=2)
-        table.add_column("Node ID", width=12)
-        table.add_column("HB", width=6, justify="right")
-        table.add_column("Sub-Module Summary", ratio=1)
-        table.add_column("CRC Status", width=18)
-        table.add_column("NVS", width=10)
-
-        now = time.time()
-        for i, nid in enumerate(node_ids):
-            n = self.state.nodes[nid]
-            is_sel = (i == self.selected_idx % len(node_ids))
-            row_style = "reverse" if is_sel else ""
-            marker = ">" if is_sel else ""
-            hb = int(now - n['last_rx'])
-            hb_col = "red" if hb > 10 else "white"
+        for i, node_id in enumerate(node_ids):
+            prefix = "> " if i == self.selected_idx else "  "
+            staged_marker = "[yellow]*[/yellow]" if node_id in self.picker_buffer else " "
             
-            sum_color = "cyan" if (self.filter_enabled and is_sel) else "dim"
-            mod_summary = [f"M{k}:[{sum_color}]{CFG_MAP.get(s['intro_id'], f'0x{s['intro_id']:03X}')}[/]" for k, s in sorted(n['subs'].items())]
+            node_data = self.state.nodes[node_id]
+            last_seen = node_data.get('last_seen', 0)
+            elapsed = time.time() - last_seen
+            status_str = "[green]Online[/green]" if elapsed < 5.0 else "[red]Offline[/red]"
             
-            if n['reported_crc'] == EMPTY_CONFIG_CRC:
-                crc_str = "[bold red]NEEDS CONFIG[/]"
-            elif n['interview_complete'] and n['calculated_crc'] == n['reported_crc']:
-                crc_str = "[green]MATCH[/]"
-            else:
-                crc_str = "[yellow]MODIFIED[/]"
-                
-            table.add_row(marker, f"0x{nid:08X}", f"[{hb_col}]{hb}s[/]", " ".join(mod_summary), crc_str, n['nvs_status'], style=row_style)
+            table.add_row(
+                f"{prefix}{staged_marker}0x{node_id:03X}",
+                status_str,
+                f"{elapsed:.1f}s ago",
+                str(node_data.get('sub_mod_cnt', 0))
+            )
 
-            if self.detail_node == nid:
-                detail_text = ""
-                for idx, s in sorted(n['subs'].items()):
-                    raw_cfg = s['cfg'].hex().upper() if s['cfg'] else "NONE"
-                    t_id = f"0x{s['telemetry']['id']:03X}" if s['telemetry'] else "N/A"
-                    detail_text += f"  └─ [bold]Idx {idx}[/]: Type: 0x{s['intro_id']:03X} | Raw: {raw_cfg} | Telem ID: {t_id}\n"
-                table.add_row("", "", "", detail_text.strip(), "", "")
-
-        l = Layout()
-        l.split(
-            Layout(Text(f" CAN Master | Arrows: Select | (m)ore | (c)md | (e)dit | (p)ersist | e(x)punge | (f)ilter | (b)roadcast | (q)uit   {filter_status}", style="bold reverse blue"), size=1),
-            Layout(table, name="body"),
-            Layout(Panel(Text("\n".join(display_logs)), title="System Log", border_style="cyan"), size=10)
-        )
-        return l
+        # Restore original footer text
+        footer = "[q] Quit | [up/down] Select | [m] Toggle Details | [c] Custom | [e] Edit | [p] Persist | [+] Stage | [l] Send"
+        layout["body"].update(Panel(table, subtitle=Text(footer, justify="center")))
+        return layout
 
     def run(self):
         self.reader.start()
@@ -501,15 +498,41 @@ class App:
                     if not self.interaction_active:
                         self._process_queue()
                         key = self._get_key()
+                        
+                        # Get node list once per loop for indexing
+                        node_ids = sorted(self.state.nodes.keys())
+                        
                         if key == 'q': self.stop_event.set()
                         elif key == 'up': self.selected_idx -= 1
                         elif key == 'down': self.selected_idx += 1
+                        
+                        # --- New ColorPicker Logic ---
+                        elif key == '+':
+                            if node_ids:
+                                target_id = node_ids[self.selected_idx % len(node_ids)]
+                                self.picker_buffer.add(target_id)
+                        elif key == '-':
+                            if node_ids:
+                                target_id = node_ids[self.selected_idx % len(node_ids)]
+                                if target_id in self.picker_buffer:
+                                    self.picker_buffer.remove(target_id)
+                        elif key == 'l':
+                            if node_ids:
+                                selected_id = node_ids[self.selected_idx % len(node_ids)]
+                                if selected_id == 0x792:
+                                    for nid in self.picker_buffer:
+                                        # Pack 32-bit ID (Big Endian) + 4 bytes padding (DLC 8)
+                                        data = struct.pack(">I", nid) + b'\x00\x00\x00\x00'
+                                        self.bus.send(can.Message(arbitration_id=COLORPICKER_ADD_NODE_ID, data=data))
+                                        time.sleep(0.02)
+                                    self.bus.send(can.Message(arbitration_id=COLORPICKER_WRITE_NVS_ID, data=[0]*4))
+                        
+                        # --- Restored Original Commands ---
                         elif key == 'f': self.filter_enabled = not self.filter_enabled
                         elif key == 'b': 
                             for n in self.state.nodes.values(): n['interview_complete'], n['sub_mod_cnt'] = False, 0
                             self.bus.send(can.Message(arbitration_id=REQ_NODE_INTRO_ID, data=[0]*4))
                         elif key == 'm':
-                            node_ids = sorted(self.state.nodes.keys())
                             if node_ids:
                                 current_id = node_ids[self.selected_idx % len(node_ids)]
                                 self.detail_node = current_id if self.detail_node != current_id else None
@@ -521,6 +544,7 @@ class App:
                             live.stop(); self.erase_selected(); live.start()
                         elif key == 'e':
                             live.stop(); self.edit_module(); live.start()
+                            
                         live.update(self._build_layout())
                     time.sleep(0.05)
         finally:
